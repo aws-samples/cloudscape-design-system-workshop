@@ -1,6 +1,6 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Button from '@cloudscape-design/components/button';
 import Form from '@cloudscape-design/components/form';
 import Header from '@cloudscape-design/components/header';
