@@ -1,5 +1,6 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
+import React from 'react';
 import AppLayout from '@cloudscape-design/components/app-layout';
 import TopNavigation from '@cloudscape-design/components/top-navigation';
 import Navigation from './components/navigation';
