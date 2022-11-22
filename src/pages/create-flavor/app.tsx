@@ -96,12 +96,19 @@ export default function App() {
                     errorText={
                       isFormSubmitted && selectedIngredients.length === 0 && 'List of ingredients is required.'
                     }
+                    i18nStrings={{
+                      errorIconAriaLabel: 'Error',
+                    }}
                   >
                     <Multiselect
                       placeholder="Select all ingredients"
                       selectedOptions={selectedIngredients}
                       onChange={({ detail }) => setSelectedIngredients(detail.selectedOptions)}
                       options={options}
+                      deselectAriaLabel={option => {
+                        const label = option?.value || option?.label;
+                        return label ? `Deselect ${label}` : 'no label';
+                      }}
                     />
                   </FormField>
                   <FormField label="Organic">
@@ -124,6 +131,9 @@ export default function App() {
                         label="Wholesale price"
                         stretch={true}
                         errorText={isFormSubmitted && isEmptyString(wholeSalePrice) && 'Wholesale Price is required.'}
+                        i18nStrings={{
+                          errorIconAriaLabel: 'Error',
+                        }}
                       >
                         <Input
                           value={wholeSalePrice}
@@ -135,6 +145,9 @@ export default function App() {
                         label="Retail price"
                         stretch={true}
                         errorText={isFormSubmitted && isEmptyString(retailPrice) && 'Retail Price is required.'}
+                        i18nStrings={{
+                          errorIconAriaLabel: 'Error',
+                        }}
                       >
                         <Input
                           value={retailPrice}
