@@ -117,6 +117,14 @@ export default function VariationTable({ flavors }: VariationTableProps) {
       resizableColumns={true}
       variant="full-page"
       selectionType="single"
+      ariaLabels={{
+        selectionGroupLabel: 'Items selection',
+        itemSelectionLabel: ({ selectedItems }, item) => {
+          const isItemSelected = selectedItems.filter(i => i.name === item.name).length;
+          return `${item.name} is ${isItemSelected ? '' : 'not '}selected`;
+        },
+        tableLabel: 'Flavors table',
+      }}
       header={
         <Header
           variant="awsui-h1-sticky"
