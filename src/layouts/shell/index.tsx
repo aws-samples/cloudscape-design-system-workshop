@@ -26,12 +26,8 @@ export default function Shell({ children, contentType, breadcrumbs, tools, navig
             href: '/home/index.html',
           }}
           i18nStrings={{
-            searchIconAriaLabel: 'Search',
-            searchDismissIconAriaLabel: 'Close search',
             overflowMenuTriggerText: 'More',
             overflowMenuTitleText: 'All',
-            overflowMenuBackIconAriaLabel: 'Back',
-            overflowMenuDismissIconAriaLabel: 'Close menu',
           }}
         />
       </div>
