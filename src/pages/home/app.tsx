@@ -29,6 +29,15 @@ export default function App() {
       </div>
       <AppLayout
         headerSelector="#top-nav"
+         ariaLabels={{
+          navigation: 'Navigation drawer',
+          navigationClose: 'Close navigation drawer',
+          navigationToggle: 'Open navigation drawer',
+          notifications: 'Notifications',
+          tools: 'Help panel',
+          toolsClose: 'Close help panel',
+          toolsToggle: 'Open help panel',
+        }}
         breadcrumbs={<Breadcrumbs />}
         navigation={<Navigation />}
         content={
