@@ -25,12 +25,19 @@ export default function Ingredients() {
             <FormField
               label="List of ingredients"
               errorText={isFormSubmitted && selectedIngredients.length === 0 && 'List of ingredients is required.'}
+              i18nStrings={{
+                errorIconAriaLabel: 'Error',
+              }}
             >
               <Multiselect
                 placeholder="Select all ingredients"
                 selectedOptions={selectedIngredients}
                 onChange={({ detail }) => setSelectedIngredients(detail.selectedOptions)}
                 options={options}
+                deselectAriaLabel={option => {
+                  const label = option?.value || option?.label;
+                  return label ? `Deselect ${label}` : 'no label';
+                }}
               />
             </FormField>
             <FormField label="Organic">

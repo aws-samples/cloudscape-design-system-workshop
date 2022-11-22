@@ -30,6 +30,9 @@ export default function Marketing() {
                   label="Wholesale price"
                   stretch={true}
                   errorText={isFormSubmitted && isEmptyString(wholeSalePrice) && 'Wholesale price is required.'}
+                  i18nStrings={{
+                    errorIconAriaLabel: 'Error'
+                  }}
                 >
                   <Input
                     value={wholeSalePrice}
@@ -41,6 +44,9 @@ export default function Marketing() {
                   label="Retail price"
                   stretch={true}
                   errorText={isFormSubmitted && isEmptyString(retailPrice) && 'Retail price is required.'}
+                  i18nStrings={{
+                    errorIconAriaLabel: 'Error'
+                  }}
                 >
                   <Input value={retailPrice} onChange={({ detail }) => setRetailPrice(detail.value)} type="number" />
                 </FormField>
