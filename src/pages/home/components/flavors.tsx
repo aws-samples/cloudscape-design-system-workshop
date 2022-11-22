@@ -27,13 +27,22 @@ export default function Flavors({ data, items }: VariationsProps) {
   return (
     <SpaceBetween size={'l'}>
       <Container header={<Header variant="h2">Flavors (last 24h)</Header>}>
-        <PieChart data={data} hideFilter={true} />
+        <PieChart data={data} hideFilter={true} i18nStrings={{
+          chartAriaRoleDescription: 'Pie chart',
+          detailPopoverDismissAriaLabel: 'Dismiss',
+          legendAriaLabel: 'Legend',
+          filterSelectedAriaLabel: 'filterSelectedAriaLabel',
+          segmentAriaRoleDescription: 'segment',
+        }} />
       </Container>
       <Table
         sortingColumn={columnDefinitions[0]}
         header={<Header variant="h2">Details</Header>}
         items={items}
         columnDefinitions={columnDefinitions}
+        ariaLabels={{
+          tableLabel: 'Details table',
+        }}
       />
     </SpaceBetween>
   );
