@@ -8,7 +8,7 @@ In this workshop, we will go from an empty React TypeScript project to building 
 
 All steps towards the final application are available as branches on the repository.
 
-The workshop instructions will be shared at the workshop via [Workshop Studio](https://catalog.workshops.aws/).
+Find the workshop instructions on [workshops.aws](https://catalog.us-east-1.prod.workshops.aws/workshops/5b7fe737-7ea2-4c4d-b572-76df6adabd47).
 
 ## Introduction
 
