@@ -33,7 +33,12 @@ export default function QualityReport({ quote, notes }: QualityReportProps) {
       </Button>
       {showTastingNotes ? (
         <Modal visible={true} onDismiss={() => setShowTastingNotes(false)} header="Tasting notes">
-          <Table sortingColumn={columnDefinitions[0]} items={notes} columnDefinitions={columnDefinitions} />
+          <Table
+            sortingColumn={columnDefinitions[0]}
+            enableKeyboardNavigation={true}
+            items={notes}
+            columnDefinitions={columnDefinitions}
+          />
         </Modal>
       ) : null}
     </Container>

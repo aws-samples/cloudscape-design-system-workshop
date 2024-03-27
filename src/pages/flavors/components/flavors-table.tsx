@@ -111,6 +111,7 @@ export default function VariationTable({ flavors }: VariationTableProps) {
   return (
     <Table<Flavor>
       {...collectionProps}
+      enableKeyboardNavigation={false}
       items={items}
       columnDefinitions={columnDefinitions}
       stickyHeader={true}

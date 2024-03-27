@@ -37,6 +37,7 @@ export default function Flavors({ data, items }: VariationsProps) {
       </Container>
       <Table
         sortingColumn={columnDefinitions[0]}
+        enableKeyboardNavigation={true}
         header={<Header variant="h2">Details</Header>}
         items={items}
         columnDefinitions={columnDefinitions}
