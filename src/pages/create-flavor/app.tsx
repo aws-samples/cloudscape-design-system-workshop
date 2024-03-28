@@ -1,7 +1,6 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
 import React from 'react';
-import { useState } from 'react';
 
 import Button from '@cloudscape-design/components/button';
 import Form from '@cloudscape-design/components/form';
@@ -15,11 +14,12 @@ import Marketing from './components/marketing';
 import Navigation from '../../components/navigation';
 import Shape from './components/shape';
 import ShellLayout from '../../layouts/shell';
-import { FormContext } from './validation/form-context';
+import { BasicValidationContext, useBasicValidation } from './validation/basic-validation';
 import { ContentLayout } from '@cloudscape-design/components';
 
 export default function App() {
-  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  const { isFormSubmitted, setIsFormSubmitted, addErrorField, focusFirstErrorField } = useBasicValidation();
+
   return (
     <ShellLayout
       contentType="form"
@@ -38,10 +38,11 @@ export default function App() {
         }
       >
         <SpaceBetween size="m">
-          <FormContext.Provider value={{ isFormSubmitted: isFormSubmitted }}>
+          <BasicValidationContext.Provider value={{ isFormSubmitted: isFormSubmitted, addErrorField: addErrorField }}>
             <form
               onSubmit={event => {
                 setIsFormSubmitted(true);
+                focusFirstErrorField();
                 event.preventDefault();
               }}
             >
@@ -64,7 +65,7 @@ export default function App() {
                 </SpaceBetween>
               </Form>
             </form>
-          </FormContext.Provider>
+          </BasicValidationContext.Provider>
         </SpaceBetween>
       </ContentLayout>
     </ShellLayout>
